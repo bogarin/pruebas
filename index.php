@@ -14,5 +14,5 @@
 		$url=$_GET['url'];
 	}
 	$recuest=new Request($url);
-	var_dump($recuest->getUrl());
+	var_dump($recuest->getController());
 ?>
