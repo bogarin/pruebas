@@ -11,7 +11,8 @@
 
 		public function __construct($url){
 			$this->url=$url;
-			$this->resolveController(explode('/', $this->getUrl());
+			$segments=explode('/', $this->url);
+			$this->resolveController($segments);
 		}
 
 		public function getUrl(){
