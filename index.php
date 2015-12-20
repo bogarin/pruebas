@@ -15,12 +15,4 @@
 	}
 	$recuest=new Request($url);
 	var_dump($recuest->getUrl());
-
-
-	/*llamar a los controladores indicados
-	if(empty($_GET['url'])){
-		$_GET['url'] = 'home';
-	}
-	controller($_GET['url']);
-	*/
 ?>
