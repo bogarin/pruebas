@@ -7,12 +7,12 @@
 	require 'helpers.php';
 	//librerias
 	require 'library/Request.php';
-	
+	require 'library/Inflector.php';
 	if (empty($_GET['url'])) {
 		$url="";
 	}else{
 		$url=$_GET['url'];
 	}
 	$recuest=new Request($url);
-	var_dump($recuest->getController());
+	var_dump($recuest->getActionMethodName());
 ?>
