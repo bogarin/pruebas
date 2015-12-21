@@ -30,7 +30,6 @@
 		}
 	
 		public function resolveAction(&$segments){
-			var_dump($segments);
 			$this->action=array_shift($segments);
 			if (empty($this->action)) {
 				$this->action=$this->defaultAction;
@@ -66,7 +65,20 @@
 		}
 
 		public function getActionMethodName(){
-			return Inflector::lowCamel($this->getController()).'Action';
+			return Inflector::lowCamel($this->getAction()).'Action';
+		}
+
+		public function execute(){
+			$controllerClassName= $this->getControllerClassName();
+			$controllerFileName= $this->getControllerFileName();
+			$actionMethodName=$this->getActionMethodName();
+			$params=$this->getParams(); 
+			if (!file_exists($controllerFileName)) {
+				exit('controlador no exite');
+			}
+			require $controllerFileName;
+			$controller = new $controllerClassName();
+			$controller-> $actionMethodName();
 		}
 
 	}
