@@ -6,8 +6,8 @@
 	class HomeController{
 		
 		function indexAction(){
-			$view=new View('home',['titulo'=>'Mejorando PHP']);
-			$view->execute();
+		return ['titulo'=>'Mejorando PHP'];
+		//	return $view=new View('home',['titulo'=>'Mejorando PHP']);
 		}
 	}
 	?>
