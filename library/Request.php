@@ -79,10 +79,13 @@
 			require $controllerFileName;
 			$controller = new $controllerClassName();
 			$response = call_user_func_array([$controller,$actionMethodName], $params);
+			$this->executeResponse($response);
 
+		}
+
+		public function executeResponse($response){
 			if ($response instanceof Response) {
 			$response->execute();
-				
 			}else if(is_string($response)){
 				echo $response;
 			}else if(is_array($response)){
