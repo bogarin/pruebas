@@ -8,8 +8,8 @@ class ContactosController{
 		# code...
 	}
 
-	public function ciudadAction(){
-		exit('contactos ciudad');
+	public function ciudadAction($ciudad){
+		exit('contactos '.$ciudad);
 	}
 }
  ?>

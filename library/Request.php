@@ -78,7 +78,7 @@
 			}
 			require $controllerFileName;
 			$controller = new $controllerClassName();
-			$controller-> $actionMethodName();
+			call_user_func_array([$controller,$actionMethodName], $params);
 		}
 
 	}
